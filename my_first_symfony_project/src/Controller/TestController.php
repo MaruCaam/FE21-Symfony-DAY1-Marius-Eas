@@ -15,10 +15,10 @@ class TestController extends AbstractController
             'controller_name' => 'TestController',
         ]);
     }
+ 
 
 
-
-    #[Route("random/{max}", name:"randomw_number")]
+    #[Route("random/{max}", name:"random_number")]
     public function number($max){
         $number = random_int(0, $max);
         return $this->render('test/random.html.twig',[
@@ -26,4 +26,15 @@ class TestController extends AbstractController
         ]);
     }
 
+
+    public function message(): Response{
+        
+        return $this->render('test/message.html.twig',[
+            
+             'name' => 'Jungle'
+         
+        ]);
+    }
+
 }
+
